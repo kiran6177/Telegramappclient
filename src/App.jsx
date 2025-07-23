@@ -32,7 +32,7 @@ function App() {
         <img src={darkLogo} alt="logo" className="w-32 " />
         <h1 className="text-2xl font-bold  place-self-baseline">Appoitment Tracker</h1>
       </div>
-      {!isAdmin ? <AdminPanel /> : <BookingForm />}
+      {isAdmin ? <AdminPanel /> : <BookingForm />}
     </div>
   );
 }
