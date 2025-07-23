@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'PP Editorial New Italic';
+  src: url('./assets/fonts/PPEditorialNew-Italic.otf') format('opentype');
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/Satoshi-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -34,16 +50,38 @@ body {
   min-height: 100vh;
 }
 
+body, p, span, li, input, select, textarea {
+  font-family: 'Satoshi', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #000;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+  font-family: 'PP Editorial New Italic', serif;
+  font-style: italic;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+input , select {
+  border-radius: 12px !important;
+  height: 44px !important;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  font-weight: 500;
+}
+
+button {
+  border-radius: 12px !important;
+  height: 44px !important;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;

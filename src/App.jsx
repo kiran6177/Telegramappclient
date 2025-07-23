@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import BookingForm from "./components/BookingForm.jsx";
 import AdminPanel from "./components/AdminPanel.jsx";
 import api from "./api";
+import darkLogo from "./assets/svg/dark_logo.png";
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -26,9 +27,12 @@ function App() {
   if (!checked) return <div className="text-center mt-10">Loading...</div>;
 
   return (
-    <div className="max-w-lg mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-6 text-center">Book a Call</h1>
-      {isAdmin ? <AdminPanel /> : <BookingForm />}
+    <div className="w-screen  min-h-screen mx-auto p-4">
+      <div className="flex items-end max-w-xl mx-auto gap-4 mb-4">
+        <img src={darkLogo} alt="logo" className="w-32 " />
+        <h1 className="text-2xl font-bold  place-self-baseline">Appoitment Tracker</h1>
+      </div>
+      {!isAdmin ? <AdminPanel /> : <BookingForm />}
     </div>
   );
 }
